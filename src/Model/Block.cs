@@ -24,7 +24,6 @@ public record Block
         // The first X digits of the hash of "the concatenation of this block's hash and the nonce" must be 0.
         // Required time depends on X, so X is called "difficulty".
         // On my MacBook Pro, X=3: <1sec, X=4: 2-3sec, X=5: 30-40sec, X=6: 3-4min
-        // this.nonce = FindNonce();
         nonce = BlockUtil.FindNonce(difficulty, hash);
     }
 
